@@ -11,3 +11,7 @@ yarn-debug.log*
 yarn-error.log*
 bun.lockb
 **.tgz
+index.js
+eslint.config.js
+tsup.config.js
+tsconfig.json
