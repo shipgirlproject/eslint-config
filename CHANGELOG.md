@@ -1,4 +1,13 @@
-# 0.1.0 (2024-08-11)
+## [0.1.1](https://github.com/shipgirlproject/eslint-config/compare/v0.1.0...v0.1.1) (2024-08-11)
+
+
+### Bug Fixes
+
+* npm publish cmd ([514a5aa](https://github.com/shipgirlproject/eslint-config/commit/514a5aa867e1e194d59398b0dfe8b1e13e042154))
+
+
+
+# [0.1.0](https://github.com/shipgirlproject/eslint-config/compare/17772caa8542d673ee18043cba006585bfd5ee13...v0.1.0) (2024-08-11)
 
 
 ### Bug Fixes
