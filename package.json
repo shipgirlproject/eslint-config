@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "tsup --config tsup.config.js",
+    "lint": "eslint .",
     "prepare": "npm run build"
   },
   "dependencies": {
