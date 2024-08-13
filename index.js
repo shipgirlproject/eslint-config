@@ -20,7 +20,6 @@ export default function config(rootdir) {
 		eslint.configs.recommended,
 		...tseslint.configs.recommendedTypeChecked,
 		...tseslint.configs.stylisticTypeChecked,
-		// @ts-expect-error incorrect type from package, but still compatible
 		augu.javascript(),
 		// temp disable due to rule move from typescript-eslint (ts) -> stylistic (style)
 		// await augu.typescript(),
