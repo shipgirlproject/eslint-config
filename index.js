@@ -64,7 +64,16 @@ export default function config(rootdir) {
 				'@stylistic/no-multiple-empty-lines': [ 'error', { 'max': 1 }],
 				'@stylistic/eol-last': [ 'warn', 'always' ],
 				'@stylistic/no-trailing-spaces': [ 'warn', { 'ignoreComments': true }],
-				'camelcase': [ 'off' ],
+				'camelcase': [ 'off' ]
+			}
+		},
+		{
+			files: [
+				'**/*.js',
+				'**/*.cjs',
+				'**/*.mjs'
+			],
+			rules: {
 				'require-await': [ 'error' ],
 				'no-unused-vars': [ 'warn' ]
 			}
