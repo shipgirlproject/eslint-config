@@ -63,6 +63,7 @@ export default function config(rootdir) {
 				'@stylistic/no-multiple-empty-lines': [ 'error', { 'max': 1 }],
 				'@stylistic/eol-last': [ 'warn', 'always' ],
 				'@stylistic/no-trailing-spaces': [ 'warn', { 'ignoreComments': true }],
+				'@typescript-eslint/require-await': [ 'warn' ],
 				'camelcase': [ 'off' ]
 			}
 		},
@@ -73,7 +74,7 @@ export default function config(rootdir) {
 				'**/*.mjs'
 			],
 			rules: {
-				'require-await': [ 'error' ],
+				'require-await': [ 'warn' ],
 				'no-unused-vars': [ 'warn' ]
 			}
 		}
