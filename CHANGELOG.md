@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/shipgirlproject/eslint-config/compare/v0.2.0...v0.2.1) (2024-08-13)
+
+
+### Bug Fixes
+
+* separate rules should apply only to js files ([e68eac0](https://github.com/shipgirlproject/eslint-config/commit/e68eac03ddcb4d274b7378e40795d3066881f038))
+
+
+
 # [0.2.0](https://github.com/shipgirlproject/eslint-config/compare/v0.1.2...v0.2.0) (2024-08-12)
 
 
