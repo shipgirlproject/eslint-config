@@ -25,18 +25,18 @@
   },
   "dependencies": {
     "@augu/eslint-config": "^5.2.4",
-    "@eslint/js": "^9.9.0",
-    "@stylistic/eslint-plugin": "^2.6.2",
+    "@eslint/js": "^9.11.1",
+    "@stylistic/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^8.7.0",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import-x": "^4.3.0",
     "globals": "^15.9.0",
-    "typescript-eslint": "^8.1.0"
+    "typescript-eslint": "^8.7.0"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/eslint__js": "^8.42.3",
-    "tsup": "^8.2.4"
+    "tsup": "^8.3.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0",
