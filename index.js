@@ -1,9 +1,13 @@
 // @ts-check
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import stylistic from '@stylistic/eslint-plugin';
+/* eslint-disable import-x/no-named-as-default-member, import-x/namespace */
+
 import * as augu from '@augu/eslint-config';
+import eslint from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin';
+import * as tsParser from '@typescript-eslint/parser';
+import eslintPluginImportX from 'eslint-plugin-import-x';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 /**
  * @param {string} rootdir Project root directory that contains tsconfig.json
@@ -23,11 +27,14 @@ export default function config(rootdir) {
 		augu.javascript(),
 		// temp disable due to rule move from typescript-eslint (ts) -> stylistic (style)
 		// await augu.typescript(),
+		eslintPluginImportX.flatConfigs.recommended,
+		eslintPluginImportX.flatConfigs.typescript,
 		stylistic.configs['disable-legacy'],
 		{
 			languageOptions: {
 				ecmaVersion: 'latest',
 				sourceType: 'module',
+				parser: tsParser,
 				parserOptions: {
 					projectService: true,
 					tsconfigRootDir: rootdir
@@ -63,7 +70,45 @@ export default function config(rootdir) {
 				'@stylistic/no-multiple-empty-lines': [ 'error', { 'max': 1 }],
 				'@stylistic/eol-last': [ 'warn', 'always' ],
 				'@stylistic/no-trailing-spaces': [ 'warn', { 'ignoreComments': true }],
-				'@typescript-eslint/require-await': [ 'warn' ]
+				'@typescript-eslint/require-await': [ 'warn' ],
+				'import-x/no-extraneous-dependencies': [ 'error' ],
+				'import-x/no-mutable-exports': [ 'warn' ],
+				'import-x/no-unused-modules': [ 'warn' ],
+				'import-x/no-amd': [ 'error' ],
+				'import-x/no-commonjs': [ 'error' ],
+				'import-x/no-import-module-exports': [ 'error' ],
+				'import-x/no-nodejs-modules': [ 'error' ],
+				'import-x/unambiguous': [ 'warn' ],
+				'import-x/no-absolute-path': [ 'error' ],
+				'import-x/no-cycle': [ 'error' ],
+				'import-x/no-relative-packages': [ 'error' ],
+				'import-x/no-self-import': [ 'error' ],
+				'import-x/no-useless-path-segments': [ 'warn' ],
+				'import-x/consistent-type-specifier-style': [ 'error', 'prefer-top-level' ],
+				'import-x/extensions': [ 'error', 'ignorePackages' ],
+				'import-x/first': [ 'warn' ],
+				'import-x/newline-after-import': [ 'warn' ],
+				'import-x/no-default-export': [ 'warn' ],
+				'import-x/no-unassigned-import': [ 'warn' ],
+				'import-x/order': [
+					'warn',
+					{
+						alphabetize: {
+							caseInsensitive: true,
+							order: 'asc'
+						},
+						groups: [
+							'builtin',
+							'external',
+							'internal',
+							'parent',
+							'sibling'
+						]
+						// 'newlines-between': 'always'
+					}
+				],
+				// use import-x/no-duplicate-imports
+				'no-duplicate-imports': [ 'off' ]
 			}
 		},
 		{
