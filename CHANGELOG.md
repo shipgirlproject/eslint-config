@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/shipgirlproject/eslint-config/compare/v0.2.2...v0.3.0) (2024-09-27)
+
+
+### Features
+
+* import-x rules ([5c1e92e](https://github.com/shipgirlproject/eslint-config/commit/5c1e92e05bdc10707b8c002dd31ab53f1926857a))
+
+
+
 ## [0.2.2](https://github.com/shipgirlproject/eslint-config/compare/v0.2.1...v0.2.2) (2024-08-13)
 
 
@@ -37,15 +46,6 @@
 ### Bug Fixes
 
 * version file ([969cdb9](https://github.com/shipgirlproject/eslint-config/commit/969cdb9622bb6536144f13d503cea8a4c9ea1352))
-
-
-
-## [0.1.1](https://github.com/shipgirlproject/eslint-config/compare/v0.1.0...v0.1.1) (2024-08-11)
-
-
-### Bug Fixes
-
-* npm publish cmd ([514a5aa](https://github.com/shipgirlproject/eslint-config/commit/514a5aa867e1e194d59398b0dfe8b1e13e042154))
 
 
 
