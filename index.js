@@ -77,7 +77,7 @@ export default function config(rootdir) {
 				'import-x/no-amd': [ 'error' ],
 				'import-x/no-commonjs': [ 'error' ],
 				'import-x/no-import-module-exports': [ 'error' ],
-				'import-x/no-nodejs-modules': [ 'error' ],
+				// 'import-x/no-nodejs-modules': [ 'error' ],
 				'import-x/unambiguous': [ 'warn' ],
 				'import-x/no-absolute-path': [ 'error' ],
 				'import-x/no-cycle': [ 'error' ],
