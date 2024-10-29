@@ -11,8 +11,9 @@ import tseslint from 'typescript-eslint';
 
 /**
  * @param {string} rootdir Project root directory that contains tsconfig.json
+ * @param {import("typescript-eslint").ConfigWithExtends[]} additionalConfig Additional eslint configurations
  */
-export default function config(rootdir) {
+export default function config(rootdir, ...additionalConfig) {
 	return tseslint.config(
 		{
 			ignores: [
@@ -121,6 +122,7 @@ export default function config(rootdir) {
 				'require-await': [ 'warn' ],
 				'no-unused-vars': [ 'warn' ]
 			}
-		}
+		},
+		...additionalConfig
 	);
 }
