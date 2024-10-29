@@ -1,3 +1,17 @@
+# [0.4.0](https://github.com/shipgirlproject/eslint-config/compare/v0.3.0...v0.4.0) (2024-10-29)
+
+
+### Bug Fixes
+
+* allow nodejs builtin modules ([92d0640](https://github.com/shipgirlproject/eslint-config/commit/92d0640d04d1916729569127977834346dae246c))
+
+
+### Features
+
+* option to add additional configs ([9360afc](https://github.com/shipgirlproject/eslint-config/commit/9360afc2d2984d4311b3afc9c44bc4220c0f2f12))
+
+
+
 # [0.3.0](https://github.com/shipgirlproject/eslint-config/compare/v0.2.2...v0.3.0) (2024-09-27)
 
 
@@ -37,15 +51,6 @@
 ### Features
 
 * specifiy root dir ([881337b](https://github.com/shipgirlproject/eslint-config/commit/881337b0d663d30fd82ae8de727d97bad3f83fc1))
-
-
-
-## [0.1.2](https://github.com/shipgirlproject/eslint-config/compare/v0.1.1...v0.1.2) (2024-08-11)
-
-
-### Bug Fixes
-
-* version file ([969cdb9](https://github.com/shipgirlproject/eslint-config/commit/969cdb9622bb6536144f13d503cea8a4c9ea1352))
 
 
 
