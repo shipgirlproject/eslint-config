@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'tsup';
 
+// eslint-disable-next-line import-x/no-default-export
 export default defineConfig({
 	entry: [ 'index.js' ],
 	format: [ 'esm', 'cjs' ],

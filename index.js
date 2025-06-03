@@ -1,5 +1,4 @@
 // @ts-check
-/* eslint-disable import-x/no-default-export */
 
 import * as augu from '@augu/eslint-config';
 import eslint from '@eslint/js';
@@ -91,6 +90,7 @@ export default async function config(rootdir, ...additionalConfig) {
 				'import-x/newline-after-import': [ 'warn' ],
 				'import-x/no-default-export': [ 'warn' ],
 				'import-x/no-unassigned-import': [ 'warn' ],
+				'import-x/no-named-as-default-member': [ 'off' ],
 				'import-x/order': [
 					'warn',
 					{
