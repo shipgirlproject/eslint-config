@@ -1,5 +1,5 @@
 // @ts-check
-/* eslint-disable import-x/no-named-as-default-member, import-x/namespace */
+/* eslint-disable import-x/no-default-export */
 
 import * as augu from '@augu/eslint-config';
 import eslint from '@eslint/js';
@@ -13,7 +13,7 @@ import tseslint from 'typescript-eslint';
  * @param {string} rootdir Project root directory that contains tsconfig.json
  * @param {import("typescript-eslint").ConfigWithExtends[]} additionalConfig Additional eslint configurations
  */
-export default function config(rootdir, ...additionalConfig) {
+export default async function config(rootdir, ...additionalConfig) {
 	return tseslint.config(
 		{
 			ignores: [
@@ -26,8 +26,8 @@ export default function config(rootdir, ...additionalConfig) {
 		...tseslint.configs.recommendedTypeChecked,
 		...tseslint.configs.stylisticTypeChecked,
 		augu.javascript(),
-		// temp disable due to rule move from typescript-eslint (ts) -> stylistic (style)
-		// await augu.typescript(),
+		await augu.typescript(),
+		await augu.stylistic(),
 		eslintPluginImportX.flatConfigs.recommended,
 		eslintPluginImportX.flatConfigs.typescript,
 		stylistic.configs['disable-legacy'],
