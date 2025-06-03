@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/shipgirlproject/eslint-config/compare/v0.4.0...v0.4.1) (2025-06-03)
+
+
+### Bug Fixes
+
+* async ([4f2a2a6](https://github.com/shipgirlproject/eslint-config/commit/4f2a2a617314d00ac3fa8b542d78a6982fd2b2a9))
+
+
+
 # [0.4.0](https://github.com/shipgirlproject/eslint-config/compare/v0.3.0...v0.4.0) (2024-10-29)
 
 
@@ -36,21 +45,6 @@
 ### Bug Fixes
 
 * separate rules should apply only to js files ([e68eac0](https://github.com/shipgirlproject/eslint-config/commit/e68eac03ddcb4d274b7378e40795d3066881f038))
-
-
-
-# [0.2.0](https://github.com/shipgirlproject/eslint-config/compare/v0.1.2...v0.2.0) (2024-08-12)
-
-
-### Bug Fixes
-
-* config ([2cf191b](https://github.com/shipgirlproject/eslint-config/commit/2cf191b78eaabd0a8701a2cdb8add66980ddee3c))
-* npmignore ([3f89c70](https://github.com/shipgirlproject/eslint-config/commit/3f89c70dfe54b0345561646aea7707e90fa07a64))
-
-
-### Features
-
-* specifiy root dir ([881337b](https://github.com/shipgirlproject/eslint-config/commit/881337b0d663d30fd82ae8de727d97bad3f83fc1))
 
 
 
