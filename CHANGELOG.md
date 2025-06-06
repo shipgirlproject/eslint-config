@@ -1,3 +1,12 @@
+## [0.4.2](https://github.com/shipgirlproject/eslint-config/compare/v0.4.1...v0.4.2) (2025-06-06)
+
+
+### Bug Fixes
+
+* deduplicate ([f68af6e](https://github.com/shipgirlproject/eslint-config/commit/f68af6eb794a8a4b2dca2f8e2015973724889e30))
+
+
+
 ## [0.4.1](https://github.com/shipgirlproject/eslint-config/compare/v0.4.0...v0.4.1) (2025-06-03)
 
 
@@ -36,15 +45,6 @@
 ### Bug Fixes
 
 * remove useless rule ([b0b0f2b](https://github.com/shipgirlproject/eslint-config/commit/b0b0f2b0029203875b336b50d6b423fa85eb9bbb))
-
-
-
-## [0.2.1](https://github.com/shipgirlproject/eslint-config/compare/v0.2.0...v0.2.1) (2024-08-13)
-
-
-### Bug Fixes
-
-* separate rules should apply only to js files ([e68eac0](https://github.com/shipgirlproject/eslint-config/commit/e68eac03ddcb4d274b7378e40795d3066881f038))
 
 
 
