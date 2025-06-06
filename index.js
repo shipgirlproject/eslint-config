@@ -9,10 +9,10 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 /**
- * @param {string} rootdir Project root directory that contains tsconfig.json
+ * @param {string} rootDir Project root directory that contains tsconfig.json
  * @param {import("typescript-eslint").ConfigWithExtends[]} additionalConfig Additional eslint configurations
  */
-export default async function config(rootdir, ...additionalConfig) {
+export default async function config(rootDir, ...additionalConfig) {
 	return tseslint.config(
 		{
 			ignores: [
@@ -25,7 +25,7 @@ export default async function config(rootdir, ...additionalConfig) {
 		...tseslint.configs.recommendedTypeChecked,
 		...tseslint.configs.stylisticTypeChecked,
 		augu.javascript(),
-		await augu.typescript(),
+		// await augu.typescript(),
 		await augu.stylistic(),
 		eslintPluginImportX.flatConfigs.recommended,
 		eslintPluginImportX.flatConfigs.typescript,
@@ -37,7 +37,7 @@ export default async function config(rootdir, ...additionalConfig) {
 				parser: tsParser,
 				parserOptions: {
 					projectService: true,
-					tsconfigRootDir: rootdir
+					tsconfigRootDir: rootDir
 				},
 				globals: {
 					...globals.nodeBuiltin,
@@ -71,6 +71,27 @@ export default async function config(rootdir, ...additionalConfig) {
 				'@stylistic/eol-last': [ 'warn', 'always' ],
 				'@stylistic/no-trailing-spaces': [ 'warn', { 'ignoreComments': true }],
 				'@typescript-eslint/require-await': [ 'warn' ],
+				'@typescript-eslint/adjacent-overload-signatures': [ 'warn' ],
+				'@typescript-eslint/consistent-type-definitions': [ 'error', 'interface' ],
+				'@typescript-eslint/prefer-literal-enum-member': [ 'warn', { allowBitwiseExpressions: true }],
+				'@typescript-eslint/no-extra-non-null-assertion': [ 'error' ],
+				'@typescript-eslint/no-useless-constructor': [ 'error' ],
+				'@typescript-eslint/no-array-constructor': [ 'error' ],
+				'@typescript-eslint/no-empty-object-type': [
+					'warn',
+					{
+						allowInterfaces: 'with-single-extends',
+						allowObjectTypes: 'never'
+					}
+				],
+				'@typescript-eslint/no-empty-function': [ 'error' ],
+				'@typescript-eslint/prefer-as-const': [ 'error' ],
+				'@typescript-eslint/no-this-alias': [ 'error', { allowDestructuring: true }],
+				'@typescript-eslint/no-namespace': [ 'error', { allowDeclarations: true }],
+				'@typescript-eslint/array-type': [ 'error', { default: 'array-simple' }],
+				'no-useless-constructor': 'off',
+				'dot-notation': 'off',
+				'brace-style': 'off',
 				'import-x/no-extraneous-dependencies': [ 'error' ],
 				'import-x/no-mutable-exports': [ 'warn' ],
 				'import-x/no-unused-modules': [ 'warn' ],
