@@ -92,6 +92,16 @@ export default async function config(rootDir, ...additionalConfig) {
 				'no-useless-constructor': 'off',
 				'dot-notation': 'off',
 				'brace-style': 'off',
+				'@typescript-eslint/dot-notation': [
+					'error',
+					{
+						allowPrivateClassPropertyAccess: true,
+						allowProtectedClassPropertyAccess: false,
+						allowKeywords: true
+					}
+				],
+				'@typescript-eslint/no-implied-eval': [ 'error' ],
+				'@typescript-eslint/await-thenable': [ 'error' ],
 				'import-x/no-extraneous-dependencies': [ 'error' ],
 				'import-x/no-mutable-exports': [ 'warn' ],
 				'import-x/no-unused-modules': [ 'warn' ],
