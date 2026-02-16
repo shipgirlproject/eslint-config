@@ -4,6 +4,7 @@ import * as augu from '@augu/eslint-config';
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import * as tsParser from '@typescript-eslint/parser';
+import { defineConfig } from 'eslint/config';
 import eslintPluginImportX from 'eslint-plugin-import-x';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -13,7 +14,7 @@ import tseslint from 'typescript-eslint';
  * @param {import("typescript-eslint").ConfigWithExtends[]} additionalConfig Additional eslint configurations
  */
 export default async function config(rootDir, ...additionalConfig) {
-	return tseslint.config(
+	return defineConfig(
 		{
 			ignores: [
 				'docs/*',
@@ -27,6 +28,7 @@ export default async function config(rootDir, ...additionalConfig) {
 		augu.javascript(),
 		// await augu.typescript(),
 		await augu.stylistic(),
+		// @ts-expect-error ECMA version?
 		eslintPluginImportX.flatConfigs.recommended,
 		eslintPluginImportX.flatConfigs.typescript,
 		stylistic.configs['disable-legacy'],
