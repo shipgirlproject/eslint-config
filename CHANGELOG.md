@@ -1,3 +1,20 @@
+# [0.6.0](https://github.com/shipgirlproject/eslint-config/compare/v0.5.0...v0.6.0) (2026-02-19)
+
+
+### Bug Fixes
+
+* @stylistic/type-annotation-spacing deprecation warning ([6a32c28](https://github.com/shipgirlproject/eslint-config/commit/6a32c284404ebddf33bbc6770eb65c6a055c947c))
+* specify node version required for dev ([96544c0](https://github.com/shipgirlproject/eslint-config/commit/96544c0d3fc22396aa36f2eadac017031eac0907))
+* tsconfigRootDir path ([bd5555e](https://github.com/shipgirlproject/eslint-config/commit/bd5555e9cf1a0ba84a1641f5368d6b2dae174ae5))
+* workflows names ([58fd539](https://github.com/shipgirlproject/eslint-config/commit/58fd539dff658586cfce275f4773eef016e2cf91))
+
+
+### Features
+
+* add new rules ([58cf1ee](https://github.com/shipgirlproject/eslint-config/commit/58cf1ee54b3e8954658651ea5b17789b4aee151f))
+
+
+
 # [0.5.0](https://github.com/shipgirlproject/eslint-config/compare/v0.4.2...v0.5.0) (2026-02-16)
 
 
@@ -46,15 +63,6 @@
 ### Features
 
 * option to add additional configs ([9360afc](https://github.com/shipgirlproject/eslint-config/commit/9360afc2d2984d4311b3afc9c44bc4220c0f2f12))
-
-
-
-# [0.3.0](https://github.com/shipgirlproject/eslint-config/compare/v0.2.2...v0.3.0) (2024-09-27)
-
-
-### Features
-
-* import-x rules ([5c1e92e](https://github.com/shipgirlproject/eslint-config/commit/5c1e92e05bdc10707b8c002dd31ab53f1926857a))
 
 
 
