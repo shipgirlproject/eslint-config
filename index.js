@@ -13,6 +13,7 @@ import tseslint from 'typescript-eslint';
  * @param {string} rootDir Project root directory that contains tsconfig.json
  * @param {import("typescript-eslint").ConfigWithExtends[]} additionalConfig Additional eslint configurations
  */
+// eslint-disable-next-line import-x/no-default-export
 export default async function config(rootDir, ...additionalConfig) {
 	return defineConfig(
 		{
