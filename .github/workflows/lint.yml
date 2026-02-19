@@ -1,4 +1,4 @@
-name: Code Compile
+name: Lint
 
 on:
   push:
@@ -9,16 +9,19 @@ on:
       - "**"
 
 jobs:
-  compile:
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [lts/-1, lts/*, latest]
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        persist-credentials: false
+
+    - name: Install Node
       uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm i
-    - run: npm pack
+        node-version: lts/*
+    - name: Install Deps
+      run: npm i
+    - name: Lint code
+      run: npm run lint
