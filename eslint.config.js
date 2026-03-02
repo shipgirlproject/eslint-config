@@ -1,6 +1,6 @@
 // @ts-check
 /* eslint-disable import-x/no-default-export */
 
-import config from './index.js';
+import config from './src/index.ts';
 
-export default config(import.meta.dirname);
+export default config();

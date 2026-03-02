@@ -18,13 +18,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "^20.11.0 || >=21.2.0",
-      "onFail": "error"
-    }
-  },
   "scripts": {
     "build": "tsup --config tsup.config.js",
     "lint": "eslint .",
