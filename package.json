@@ -1,51 +1,35 @@
 {
-  "name": "@shipgirl/eslint-config",
-  "version": "0.6.0",
-  "author": "0t4u",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/shipgirlproject/eslint-config.git"
-  },
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "^20.11.0 || >=21.2.0",
-      "onFail": "error"
-    }
-  },
+	"name": "@shipgirl/eslint-config",
+	"version": "0.7.0",
+	"author": "0t4u",
+	"license": "MIT",
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shipgirlproject/eslint-config.git"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		}
+	},
   "scripts": {
-    "build": "tsup --config tsup.config.js",
-    "lint": "eslint .",
-    "prepare": "npm run build"
+    "lint": "eslint index.js"
   },
-  "dependencies": {
-    "@augu/eslint-config": "^5.3.1",
-    "@eslint/js": "^9.39.2",
-    "@stylistic/eslint-plugin": "^5.9.0",
-    "@typescript-eslint/parser": "^8.56.0",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "eslint-plugin-import-x": "^4.16.1",
-    "globals": "^17.3.0",
-    "typescript-eslint": "^8.56.0"
-  },
-  "devDependencies": {
-    "@types/node": "^25.3.0",
-    "tsup": "^8.5.1"
-  },
-  "peerDependencies": {
-    "eslint": "^9.22.0",
-    "typescript": "^5.0.0"
-  }
+	"engines": {
+		"node": ">=22"
+	},
+	"dependencies": {
+		"eslint-config-neon": "^0.5.1",
+		"eslint-import-resolver-typescript": "^4.4.5",
+    "lodash.merge": "^4.6.2"
+	},
+	"peerDependencies": {
+		"eslint": "^9.22.0 || ^10.0.0",
+		"typescript": "^5.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^25.3.0"
+	}
 }

@@ -1,164 +1,106 @@
-// @ts-check
+import { defineConfig } from "eslint/config";
+import common from "eslint-config-neon/common";
+import node from "eslint-config-neon/node";
+import prettier from "eslint-config-neon/prettier";
+import typescript from "eslint-config-neon/typescript";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import merge from "lodash.merge";
 
-import * as augu from '@augu/eslint-config';
-import eslint from '@eslint/js';
-import stylistic from '@stylistic/eslint-plugin';
-import * as tsParser from '@typescript-eslint/parser';
-import { defineConfig } from 'eslint/config';
-import eslintPluginImportX from 'eslint-plugin-import-x';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+export default function config(options = {}) {
+	const commonFiles = "{js,mjs,cjs,ts,mts,cts,jsx,tsx}";
+	const project = options.project ?? ["tsconfig.eslint.json"];
 
-/**
- * @param {string} rootDir Project root directory that contains tsconfig.json
- * @param {import("typescript-eslint").ConfigWithExtends[]} additionalConfig Additional eslint configurations
- */
-// eslint-disable-next-line import-x/no-default-export
-export default async function config(rootDir, ...additionalConfig) {
+	const commonRuleset = merge(...common, {
+		files: [`**/*${commonFiles}`],
+		rules: {
+			"no-eq-null": 0,
+			eqeqeq: [2, "always", { null: "ignore" }],
+			"jsdoc/no-undefined-types": 0,
+		},
+	});
+
+	const nodeRuleset = merge(...node, {
+		files: [`**/*${commonFiles}`],
+		rules: {
+			"no-restricted-globals": 0,
+			"n/prefer-global/buffer": [2, "never"],
+			"n/prefer-global/console": [2, "always"],
+			"n/prefer-global/process": [2, "never"],
+			"n/prefer-global/text-decoder": [2, "always"],
+			"n/prefer-global/text-encoder": [2, "always"],
+			"n/prefer-global/url-search-params": [2, "always"],
+			"n/prefer-global/url": [2, "always"],
+		},
+	});
+
+	const prettierRuleset = merge(...prettier, {
+		files: [`**/*${commonFiles}`],
+	});
+
+	const typeScriptRuleset = merge(...typescript, {
+		files: [`**/*${commonFiles}`],
+		languageOptions: {
+			parserOptions: {
+				warnOnUnsupportedTypeScriptVersion: false,
+				allowAutomaticSingleRunInference: true,
+				project,
+			},
+		},
+		rules: {
+			"@typescript-eslint/consistent-type-definitions": [2, "interface"],
+			"@typescript-eslint/no-base-to-string": 0,
+			"@stylistic/js/array-element-newline": 0,
+			"@typescript-eslint/triple-slash-reference": 0,
+			"no-unreachable-loop": 2,
+			"@typescript-eslint/unbound-method": 0,
+			"id-length": 0,
+			"@typescript-eslint/prefer-literal-enum-member": [
+				2,
+				{ allowBitwiseExpressions: true },
+			],
+			"@typescript-eslint/naming-convention": [
+				2,
+				{
+					selector: "typeParameter",
+					format: ["PascalCase"],
+					custom: {
+						regex: "^\\w{3,}",
+						match: true,
+					},
+				},
+			],
+		},
+		settings: {
+			"import-x/resolver-next": [
+				createTypeScriptImportResolver({
+					noWarnOnMultipleProjects: true,
+					project,
+				}),
+			],
+		},
+	});
+
 	return defineConfig(
 		{
-			ignores: [
-				'docs/*',
-				'dist/*',
-				'node_modules/*'
-			]
+			ignores: options.ignores ?? ["**/node_modules/", ".git/", "**/dist/"],
 		},
-		eslint.configs.recommended,
-		...tseslint.configs.recommendedTypeChecked,
-		...tseslint.configs.stylisticTypeChecked,
-		augu.javascript(),
-		// await augu.typescript(),
-		await augu.stylistic(),
-		// @ts-expect-error ECMA version?
-		eslintPluginImportX.flatConfigs.recommended,
-		eslintPluginImportX.flatConfigs.typescript,
-		stylistic.configs['disable-legacy'],
+		commonRuleset,
+		nodeRuleset,
+		typeScriptRuleset,
 		{
-			languageOptions: {
-				ecmaVersion: 'latest',
-				sourceType: 'module',
-				parser: tsParser,
-				parserOptions: {
-					projectService: true,
-					tsconfigRootDir: rootDir
-				},
-				globals: {
-					...globals.nodeBuiltin,
-					...globals.builtin,
-					...globals.es2021
-				}
-			},
-			plugins: {
-				'@stylistic': stylistic
-			},
-			rules: {
-				'@stylistic/semi': [ 'error' ],
-				'@stylistic/member-delimiter-style': [ 'error' ],
-				'@stylistic/indent': [ 'error', 'tab', { 'SwitchCase': 1 }],
-				'@stylistic/space-infix-ops': [ 'error' ],
-				'@stylistic/key-spacing': [ 'error', { 'mode': 'strict' }],
-				'@stylistic/keyword-spacing': [ 'error' ],
-				'@stylistic/indent-binary-ops': [ 'error', 4 ],
-				'@stylistic/type-generic-spacing': [ 'error' ],
-				'@stylistic/type-named-tuple-spacing': [ 'error' ],
-				'@stylistic/type-annotation-spacing': [ 'error', { 'before': false, 'after': true }],
-				'@stylistic/quotes': [ 'error', 'single' ],
-				'@stylistic/comma-dangle': [ 'error', 'never' ],
-				'@stylistic/brace-style': [ 'error', '1tbs' ],
-				'@stylistic/object-curly-spacing': [ 'error', 'always', { 'objectsInObjects': false, 'arraysInObjects': false }],
-				'@stylistic/array-bracket-spacing': [ 'error', 'always', { 'objectsInArrays': false, 'arraysInArrays': false }],
-				'@stylistic/block-spacing': [ 'error', 'always' ],
-				'@stylistic/arrow-spacing': 'error',
-				'@stylistic/switch-colon-spacing': [ 'error', { 'after': true, 'before': false }],
-				'@stylistic/no-multiple-empty-lines': [ 'error', { 'max': 1 }],
-				'@stylistic/eol-last': [ 'warn', 'always' ],
-				'@stylistic/no-trailing-spaces': [ 'warn', { 'ignoreComments': true }],
-				'@typescript-eslint/require-await': [ 'warn' ],
-				'@typescript-eslint/adjacent-overload-signatures': [ 'warn' ],
-				'@typescript-eslint/consistent-type-definitions': [ 'error', 'interface' ],
-				'@typescript-eslint/explicit-member-accessibility': [ 'error', { accessibility: 'explicit', overrides: { accessors: 'no-public', constructors: 'no-public' }}],
-				'@typescript-eslint/prefer-literal-enum-member': [ 'warn', { allowBitwiseExpressions: true }],
-				'@typescript-eslint/parameter-properties': [ 'warn', { prefer: 'parameter-property' }],
-				'@typescript-eslint/no-extra-non-null-assertion': [ 'error' ],
-				'@typescript-eslint/no-useless-constructor': [ 'error' ],
-				'@typescript-eslint/no-array-constructor': [ 'error' ],
-				'@typescript-eslint/no-empty-object-type': [
-					'warn',
-					{
-						allowInterfaces: 'with-single-extends',
-						allowObjectTypes: 'never'
-					}
-				],
-				'@typescript-eslint/no-empty-function': [ 'error' ],
-				'@typescript-eslint/prefer-as-const': [ 'error' ],
-				'@typescript-eslint/no-this-alias': [ 'error', { allowDestructuring: true }],
-				'@typescript-eslint/no-namespace': [ 'error', { allowDeclarations: true }],
-				'@typescript-eslint/array-type': [ 'error', { default: 'array-simple' }],
-				'no-useless-constructor': 'off',
-				'dot-notation': 'off',
-				'brace-style': 'off',
-				'@typescript-eslint/dot-notation': [
-					'error',
-					{
-						allowPrivateClassPropertyAccess: true,
-						allowProtectedClassPropertyAccess: false,
-						allowKeywords: true
-					}
-				],
-				'@typescript-eslint/no-implied-eval': [ 'error' ],
-				'@typescript-eslint/await-thenable': [ 'error' ],
-				'import-x/no-extraneous-dependencies': [ 'error' ],
-				'import-x/no-mutable-exports': [ 'warn' ],
-				'import-x/no-unused-modules': [ 'warn' ],
-				'import-x/no-amd': [ 'error' ],
-				'import-x/no-commonjs': [ 'error' ],
-				'import-x/no-import-module-exports': [ 'error' ],
-				// 'import-x/no-nodejs-modules': [ 'error' ],
-				'import-x/unambiguous': [ 'warn' ],
-				'import-x/no-absolute-path': [ 'error' ],
-				'import-x/no-cycle': [ 'error' ],
-				'import-x/no-relative-packages': [ 'error' ],
-				'import-x/no-self-import': [ 'error' ],
-				'import-x/no-useless-path-segments': [ 'warn' ],
-				'import-x/consistent-type-specifier-style': [ 'error', 'prefer-top-level' ],
-				'import-x/extensions': [ 'error', 'ignorePackages' ],
-				'import-x/first': [ 'warn' ],
-				'import-x/newline-after-import': [ 'warn' ],
-				'import-x/no-default-export': [ 'warn' ],
-				'import-x/no-unassigned-import': [ 'warn' ],
-				'import-x/no-named-as-default-member': [ 'off' ],
-				'import-x/order': [
-					'warn',
-					{
-						alphabetize: {
-							caseInsensitive: true,
-							order: 'asc'
-						},
-						groups: [
-							'builtin',
-							'external',
-							'internal',
-							'parent',
-							'sibling'
-						]
-						// 'newlines-between': 'always'
-					}
-				],
-				// use import-x/no-duplicate-imports
-				'no-duplicate-imports': [ 'off' ]
-			}
+			files: ["**/*{ts,mts,cts,tsx}"],
+			rules: { "jsdoc/no-undefined-types": 0 },
 		},
 		{
-			files: [
-				'**/*.js',
-				'**/*.cjs',
-				'**/*.mjs'
-			],
-			rules: {
-				'require-await': [ 'warn' ],
-				'no-unused-vars': [ 'warn' ]
-			}
+			files: ["**/*{js,mjs,cjs,jsx}"],
+			rules: { "tsdoc/syntax": 0 },
 		},
-		...additionalConfig
+		prettierRuleset,
+		{
+			files: [`**/*${commonFiles}`],
+			rules: {
+				curly: [2, "all"],
+			},
+		},
 	);
 }
