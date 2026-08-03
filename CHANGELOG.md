@@ -1,3 +1,12 @@
+## [0.8.1](https://github.com/shipgirlproject/eslint-config/compare/v0.8.0...v0.8.1) (2026-08-03)
+
+
+### Bug Fixes
+
+* npmignore ([a39da9b](https://github.com/shipgirlproject/eslint-config/commit/a39da9bbc3e8e1618de06be6707cf25daca05725))
+
+
+
 # [0.8.0](https://github.com/shipgirlproject/eslint-config/compare/v0.6.0...v0.8.0) (2026-08-03)
 
 
@@ -49,15 +58,6 @@
 ### Bug Fixes
 
 * deduplicate ([f68af6e](https://github.com/shipgirlproject/eslint-config/commit/f68af6eb794a8a4b2dca2f8e2015973724889e30))
-
-
-
-## [0.4.1](https://github.com/shipgirlproject/eslint-config/compare/v0.4.0...v0.4.1) (2025-06-03)
-
-
-### Bug Fixes
-
-* async ([4f2a2a6](https://github.com/shipgirlproject/eslint-config/commit/4f2a2a617314d00ac3fa8b542d78a6982fd2b2a9))
 
 
 
