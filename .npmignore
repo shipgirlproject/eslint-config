@@ -10,7 +10,6 @@ yarn-debug.log*
 yarn-error.log*
 bun.lock
 **.tgz
-index.js
 eslint.config.js
 tsup.config.js
 tsconfig.json
