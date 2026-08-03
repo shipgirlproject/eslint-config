@@ -1,3 +1,12 @@
+## [0.8.3](https://github.com/shipgirlproject/eslint-config/compare/v0.8.2...v0.8.3) (2026-08-03)
+
+
+### Bug Fixes
+
+* ts type ([fa4bfb5](https://github.com/shipgirlproject/eslint-config/commit/fa4bfb5d33a5f078cfea36ba2709d647968bf219))
+
+
+
 ## [0.8.2](https://github.com/shipgirlproject/eslint-config/compare/v0.8.1...v0.8.2) (2026-08-03)
 
 
@@ -39,25 +48,6 @@
 ### Features
 
 * add new rules ([58cf1ee](https://github.com/shipgirlproject/eslint-config/commit/58cf1ee54b3e8954658651ea5b17789b4aee151f))
-
-
-
-# [0.5.0](https://github.com/shipgirlproject/eslint-config/compare/v0.4.2...v0.5.0) (2026-02-16)
-
-
-### Bug Fixes
-
-* add back type aware rules ([17b8fa6](https://github.com/shipgirlproject/eslint-config/commit/17b8fa687aee9fd01617a464e1ea1fb0dd27811b))
-
-
-### Features
-
-* use eslint defineConfig instead of tseslint.config ([8587fe7](https://github.com/shipgirlproject/eslint-config/commit/8587fe7aaefd44508abfd115fa3804f251c4f659))
-
-
-### Reverts
-
-* Revert "chore: bump deps" ([1b545b7](https://github.com/shipgirlproject/eslint-config/commit/1b545b72fcc8ddda98fc884618586bccef40b903))
 
 
 
