@@ -1,3 +1,12 @@
+## [0.8.2](https://github.com/shipgirlproject/eslint-config/compare/v0.8.1...v0.8.2) (2026-08-03)
+
+
+### Bug Fixes
+
+* package exports ([acf4c34](https://github.com/shipgirlproject/eslint-config/commit/acf4c347e62f7f7085418df6c5015d34a5a1b0b4))
+
+
+
 ## [0.8.1](https://github.com/shipgirlproject/eslint-config/compare/v0.8.0...v0.8.1) (2026-08-03)
 
 
@@ -49,15 +58,6 @@
 ### Reverts
 
 * Revert "chore: bump deps" ([1b545b7](https://github.com/shipgirlproject/eslint-config/commit/1b545b72fcc8ddda98fc884618586bccef40b903))
-
-
-
-## [0.4.2](https://github.com/shipgirlproject/eslint-config/compare/v0.4.1...v0.4.2) (2025-06-06)
-
-
-### Bug Fixes
-
-* deduplicate ([f68af6e](https://github.com/shipgirlproject/eslint-config/commit/f68af6eb794a8a4b2dca2f8e2015973724889e30))
 
 
 
