@@ -1,35 +1,35 @@
 {
-	"name": "@shipgirl/eslint-config",
-	"version": "0.7.1",
-	"author": "0t4u",
-	"license": "MIT",
-	"type": "module",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/shipgirlproject/eslint-config.git"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		}
-	},
+  "name": "@shipgirl/eslint-config",
+  "version": "0.8.0",
+  "author": "0t4u",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shipgirlproject/eslint-config.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "lint": "eslint index.js"
   },
-	"engines": {
-		"node": ">=22"
-	},
-	"dependencies": {
-		"eslint-config-neon": "^0.5.1",
-		"eslint-import-resolver-typescript": "^4.4.5",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "eslint-config-neon": "^0.5.1",
+    "eslint-import-resolver-typescript": "^4.4.5",
     "lodash.merge": "^4.6.2"
-	},
-	"peerDependencies": {
-		"eslint": "^9.22.0 || ^10.0.0",
-		"typescript": "^5.0.0"
-	},
-	"devDependencies": {
-		"@types/node": "^25.3.0"
-	}
+  },
+  "peerDependencies": {
+    "eslint": "^9.22.0 || ^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0"
+  }
 }
