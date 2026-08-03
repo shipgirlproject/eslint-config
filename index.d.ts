@@ -5,4 +5,4 @@ export type ConfigOptions = {
 	ignores?: string[];
 };
 
-export function config(options?: ConfigOptions): Linter.FlatConfig[];
+export default function config(options?: ConfigOptions): Linter.FlatConfig[];
